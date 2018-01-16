@@ -28,8 +28,7 @@ public class NotifyPersonServiceTest {
 		String message = notifyPersonService.notify(person);
 		System.out.println(message);
 		// Assert
-		//Assert.assertNotNull(message);
-		Assert.assertNull(message);
+		Assert.assertNotNull(message);
 	}
 
 }
