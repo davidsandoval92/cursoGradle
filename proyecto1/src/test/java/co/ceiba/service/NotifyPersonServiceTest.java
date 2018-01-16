@@ -15,20 +15,21 @@ public class NotifyPersonServiceTest {
 
 	@Before
 	public void setup() {
-		emailService = Mockito.mock(EmailService.class);//new EmailService();
+		emailService = new EmailService();//Mockito.mock(EmailService.class);
 		notifyPersonService = new NotifyPersonService(emailService);
 	}
 
 	@Test
 	public void notifyTest() {
 		// Arrange
-		Mockito.when(emailService.sendEmail(Mockito.anyString())).thenReturn("hola mundo");
+		//Mockito.when(emailService.sendEmail(Mockito.anyString())).thenReturn("hola mundo");
 		Person person = new PersonTestDataBuilder().buil();
 		// Act
 		String message = notifyPersonService.notify(person);
 		System.out.println(message);
 		// Assert
-		Assert.assertNotNull(message);
+		//Assert.assertNotNull(message);
+		Assert.assertNull(message);
 	}
 
 }
